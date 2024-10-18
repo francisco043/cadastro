@@ -1,7 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background: #f4f4f4;
     padding: 20px;
+    background: url(https://i0.wp.com/diariodotransporte.com.br/wp-content/uploads/2015/07/m_paradiso1350.jpg?ssl=1);
+    background-size: cover;
 }
 
 .container {
@@ -18,30 +20,29 @@ h1 {
 }
 
 label {
-    display: block;
     margin: 10px 0 5px;
 }
 
-input {
+input, button {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+input {
+    border: 1px solid
+}
+
 button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
+    background: #28a745;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #218838;
+    background: #218838;
 }
 
 #message {

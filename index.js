@@ -1,58 +1,55 @@
+document.getElementById('cep').addEventListener('blur', function() {
+    const cep = document.getElementById('cep').value;
+
+    // Validação do CEP
+    if (!/^\d{5}-\d{3}$/.test(cep)) {
+        alert("CEP inválido! Formato: 00000-000");
+        return;
+    }
+
+    // Função para buscar o endereço
+    function fetchAddress(cep) {
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(response => {
+                if (!response.ok) throw new Error('CEP não encontrado');
+                return response.json();
+            })
+            .then(data => {
+                // Verifica se o endereço foi encontrado e se está completo
+                if (!data.erro && data.logradouro && data.bairro && data.localidade && data.uf) {
+                    document.getElementById('address').value = `${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
+                } else {
+                    alert("Endereço incompleto ou não encontrado!");
+                    document.getElementById('address').value = ''; // Limpa o campo se o endereço não for encontrado
+                }
+            })
+            .catch(error => {
+                console.error("Erro ao buscar o endereço:", error);
+                alert("Não foi possível buscar o endereço.");
+            });
+    }
+
+    fetchAddress(cep);
+});
+
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Previne o envio padrão do formulário
+    event.preventDefault();
 
-    const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
     const cpf = document.getElementById('cpf').value;
-    const dob = document.getElementById('dob').value;
-    const address = document.getElementById('address').value;
 
-    // Validações simples
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const cpfPattern = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
-
-    if (!emailPattern.test(email)) {
+    // Validações
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         alert("Email inválido!");
         return;
     }
-
-    if (!cpfPattern.test(cpf)) {
-        alert("CPF inválido! Formato correto: 000.000.000-00");
+    if (!/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpf)) {
+        alert("CPF inválido! Formato: 000.000.000-00");
         return;
     }
 
-    // Aqui você pode enviar os dados para um servidor ou API
-    document.getElementById('message').textContent = "Cadastro realizado com sucesso!";
+    // Aqui você pode adicionar lógica para enviar os dados para um servidor, se necessário.
+
+    // Redireciona para a página de sucesso
+    window.location.href = "success.html";
 });
-
-function fetchAddress() {
-    const cep = document.getElementById('cep').value;
-    
-    // Validação do CEP
-    const cepPattern = /^\d{5}-\d{3}$/;
-    if (!cepPattern.test(cep)) {
-        alert("CEP inválido! Formato correto: 00000-000");
-        return;
-    }
-
-    // Simulação de uma chamada à API para buscar o endereço
-    fetch(`https://viacep.com.br/ws/${cep}/json/`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('CEP não encontrado');
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data && !data.erro) {
-                document.getElementById('address').value = `${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
-            } else {
-                alert("CEP não encontrado!");
-            }
-        })
-        .catch(error => {
-            console.error("Erro ao buscar o endereço:", error);
-            alert("Não foi possível buscar o endereço.");
-        });
-}
