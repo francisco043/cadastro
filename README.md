@@ -169,7 +169,13 @@ Entre na tela de formulario, digite todos os campos e aperte em cadastrar.
 
 ## 📌 Foto da interface:
 
+
+
 ![](Captura%20de%20tela%202024-10-18%20075305.png)
+
+## 📌 Passo a passo cadastro:
+
+![](Gravando-2024-10-18-084152.gif)
 
 
 ## 🔩 Quais motivos do cadastro?
