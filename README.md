@@ -207,6 +207,10 @@ Encontrar o endereço, ter uma agilidade maior para as empresas que fazem entreg
 - IA generativa
 - GLOGLE 
 
+# link de projetos parecidos
+
+- https://francisco043.github.io/form-CadEndereco-/endereco.html
+
 # Autor
 
 - [Fransisco Maimone](https://github.com/francisco043)
