@@ -23,7 +23,7 @@
 
 ## 📋 Requisitos
 
-Um dos requisitos e colocar todas as informações necessarias.
+Um dos requisitos e colocar todos os campos.
 
 ## 📋 Informações
 
@@ -43,7 +43,7 @@ com a inserção do cep, sera preenchido automaticamente, facilitando o cadastro
 ## Funcionalidades do Java-Script 🔧
 
 
-* 1- Busca de endereço via a API: Verifica s informações e valida 
+* 1- Busca de endereço via a API: Verifica se as informações sao valida 
 
 * 2- Validação de CEP: Valida se esta tudo correto com as informações
 
@@ -56,7 +56,7 @@ com a inserção do cep, sera preenchido automaticamente, facilitando o cadastro
 # Exemplos 📋
 
 
-* 1 - Verifica s informações e valida 
+* 1 - Verifica se as informações sao validas
 
 * 2 -  Valida se esta tudo correto com as informações
 
