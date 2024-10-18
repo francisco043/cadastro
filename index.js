@@ -5,7 +5,7 @@ document.getElementById('cep').addEventListener('blur', function() {
     if (!/^\d{5}-\d{3}$/.test(cep)) {
         alert("CEP inválido! Formato: 00000-000");
         return;
-    }
+    } ok
 
     // Função para buscar o endereço
     function fetchAddress(cep) {
