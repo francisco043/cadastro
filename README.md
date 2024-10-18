@@ -31,7 +31,7 @@ caso falte alguma informação, ou conste algo de errado, sera notificado.
 
 ## 📋 Notificações
 
-sera notificado caso o campo cep nao estejam completos
+sera notificado caso os campo nao estejam completos
 
 ![](Captura%20de%20tela%202024-10-10%20113853.png)
 
@@ -47,7 +47,7 @@ com a inserção do cep, sera preenchido automaticamente, facilitando o cadastro
 
 * 2- Validação de CEP: Valida se esta tudo correto com as informações
 
-* 3- Validar o cadastro: Verifica as informações se esta tudo corret com as informações
+* 3- Validar o cadastro: Verifica as informações se esta tudo correto com as informações
 
 * 4- Consumo de API: Essa função utiliza a API ViaCEP para buscar o endereço associado ao CEP informado.
 
@@ -90,29 +90,33 @@ com a inserção do cep, sera preenchido automaticamente, facilitando o cadastro
 
 ## 📌 Explicação do Código
 
->* ``Bloco .then(data => { ... }):
-Este bloco é executado após a conclusão de uma promessa (promise), onde data representa a resposta recebida da chamada de API (presumivelmente uma busca de endereço).
+>* ``Bloco .then(data => { ... }): ``
+
+📌 Este bloco é executado após a conclusão de uma promessa (promise), onde data representa a resposta recebida da chamada de API (presumivelmente uma busca de endereço).
 Verificação do resultado: ``
 
->* if (!data.erro && data.logradouro && data.bairro && data.localidade && data.uf):
-Aqui, o código verifica se não houve erro (!data.erro) e se todos os campos de endereço necessários (logradouro, bairro, localidade, uf) estão presentes na resposta.
+>* `` if (!data.erro && data.logradouro && data.bairro && data.localidade && data.uf):``
+
+📌 Aqui, o código verifica se não houve erro (!data.erro) e se todos os campos de endereço necessários (logradouro, bairro, localidade, uf) estão presentes na resposta.
 Formatação do endereço:
 document.getElementById('address').value = ${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf};:
 Se todas as informações estiverem corretas, o endereço é formatado e atribuído ao campo de entrada com o ID 'address'.
 Tratamento de endereço incompleto ou não encontrado: ``
 
->* else { ... }:
-Se a verificação falhar, significa que o endereço está incompleto ou não foi encontrado.
+>* `` else { ... }: ``
+
+📌 Se a verificação falhar, significa que o endereço está incompleto ou não foi encontrado.
 Um alerta é exibido informando o usuário sobre o problema.
 O campo de entrada é limpo (document.getElementById('address').value = '';).
 Tratamento de erros: ``
 
->* catch(error => { ... }):
-Este bloco captura qualquer erro que ocorra durante a busca do endereço.
+>* ``catch(error => { ... }): ``
+
+📌 Este bloco captura qualquer erro que ocorra durante a busca do endereço.
 O erro é logado no console (console.error(...)).
 Um alerta é mostrado ao usuário informando que não foi possível buscar o endereço.
 
-##  metodos e linguagens utilizados
+##  Metodos e linguagens utilizados 📋
 
 📌 return
  
